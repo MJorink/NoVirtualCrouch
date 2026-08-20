@@ -2,7 +2,7 @@
     "name": "NoVirtualCrouch",
     "version_number": "1.0.0",
     "website_url": "https://github.com/MJorink/NoVirtualCrouch",
-    "description": "A BoneLab mod that allows you to toggle on/off virtual crouching input.",
+    "description": "A BoneLab mod that disables virtual crouching input.",
     "dependencies": [
         "bonelib-BoneLib-3.2.2"
     ]
