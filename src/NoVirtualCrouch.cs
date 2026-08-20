@@ -39,15 +39,14 @@ namespace NoVirtualCrouch
             category.SaveToFile();
         }
 
-        [HarmonyPatch(typeof(OpenController), nameof(OpenController.GetThumbStickDown))] // Replace GetThumbStickDown with moving stick up/down
+        [HarmonyPatch(typeof(OpenController), nameof(OpenController.GetThumbStickAxis))]
         private static class SuppressVirtualCrouch
         {
-            private static void Postfix(OpenController __instance, ref bool __result)
+            private static void Postfix(OpenController __instance, ref Vector2 __result)
             {
-                bool suppressEntries = !crouchEntry.Value;
-                if (__result && suppressEntries && __instance == GetController())
+                if (!crouchEntry.Value && __instance == GetController())
                 {
-                    __result = false;
+                    __result.y = 0f;
                 }
             }
         }
