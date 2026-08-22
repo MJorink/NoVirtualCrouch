@@ -20,7 +20,7 @@ namespace NoVirtualCrouch
             {
                 if (__instance == GetController())
                 {
-                    __result.y = 0f;
+                	__result.y = 0f;
                 }
             }
         }
