@@ -10,7 +10,7 @@
 		<Product>NoVirtualCrouch</Product>
 	</PropertyGroup>
 
-	<ItemGroup>
+		<ItemGroup>
 		<Reference Include="BoneLib">
 		  <HintPath>$(HOME)/repos/BL-Libs/Mods/BoneLib.dll</HintPath>
 		</Reference>
@@ -38,10 +38,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Compile Include="NoVirtualCrouch.cs" />
+		<Compile Include="NoVirtualCrouch.cs"/>
 	</ItemGroup>
 
 	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(HOME)/repos/NoVirtualCrouch/docs/Mods' != ''">
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(HOME)/repos/NoVirtualCrouch/docs/Mods" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(HOME)/repos/NoVirtualCrouch/docs/Mods"/>
 	</Target>
 </Project>
