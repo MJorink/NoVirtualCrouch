@@ -1,16 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
-		<Nullable>disable</Nullable>
-		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-		<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-		<AssemblyTitle>NoVirtualCrouch</AssemblyTitle>
-		<Product>NoVirtualCrouch</Product>
-	</PropertyGroup>
-
-		<ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyTitle>NoVirtualCrouch</AssemblyTitle>
+    <Product>NoVirtualCrouch</Product>
+  </PropertyGroup>
+	<ItemGroup>
 		<Reference Include="BoneLib">
 		  <HintPath>$(HOME)/repos/BL-Libs/Mods/BoneLib.dll</HintPath>
 		</Reference>
@@ -36,12 +32,7 @@
 		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/net6/Il2CppInterop.Runtime.dll</HintPath>
 		</Reference>
 	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Include="NoVirtualCrouch.cs"/>
-	</ItemGroup>
-
-	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(HOME)/repos/NoVirtualCrouch/docs/Mods' != ''">
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(HOME)/repos/NoVirtualCrouch/docs/Mods"/>
+	<Target Name="CopyOutput" AfterTargets="Build" Condition="'$(HOME)/repos/NoVirtualCrouch/Staging/Thunderstore/Mods' != ''">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(HOME)/repos/NoVirtualCrouch/Staging/Thunderstore/Mods"/>
 	</Target>
 </Project>

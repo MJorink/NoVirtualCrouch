@@ -4,13 +4,14 @@ using BoneLib;
 using Il2CppSLZ.Marrow;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(NoVirtualCrouch.Core), "NoVirtualCrouch", "1.0.0", "jorink")]
-[assembly: MelonGame("Stress Level Zero", "BONELAB")]
-
 namespace NoVirtualCrouch
 {
-    public class Core : MelonMod
+    public class NoVirtualCrouchMod : MelonMod
     {
+    	public const string Title = "NoVirtualCrouch";
+    	public const string Description = "A BoneLab mod that disables virtual crouching input.";
+    	public const string Version = "1.1.0";
+
         private static BaseController GetController() => Player.RightController;
 
         [HarmonyPatch(typeof(OpenController), nameof(OpenController.GetThumbStickAxis))]
