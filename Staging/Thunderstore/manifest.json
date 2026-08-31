@@ -4,6 +4,7 @@
     "website_url": "https://github.com/MJorink/NoVirtualCrouch",
     "description": "A BoneLab mod that disables virtual crouching input.",
     "dependencies": [
-        "bonelib-BoneLib-3.2.2"
+        "bonelib-BoneLib-3.2.2",
+        "Jorink-JLib-1.0.0"
     ]
 }

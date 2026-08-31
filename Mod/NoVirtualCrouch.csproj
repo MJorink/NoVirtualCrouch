@@ -2,22 +2,19 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <AssemblyTitle>NoVirtualCrouch</AssemblyTitle>
-    <Product>NoVirtualCrouch</Product>
   </PropertyGroup>
 	<ItemGroup>
 		<Reference Include="BoneLib">
 		  <HintPath>$(HOME)/repos/BL-Libs/Mods/BoneLib.dll</HintPath>
+		</Reference>
+		<Reference Include="JLib">
+		  <HintPath>$(HOME)/repos/JLib/Staging/Thunderstore/Mods/JLib.dll</HintPath>
 		</Reference>
 		<Reference Include="MelonLoader">
 		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/net6/MelonLoader.dll</HintPath>
 		</Reference>
 		<Reference Include="0Harmony">
 		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/net6/0Harmony.dll</HintPath>
-		</Reference>
-		<Reference Include="UnityEngine">
-		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/Il2CppAssemblies/UnityEngine.dll</HintPath>
 		</Reference>
 		<Reference Include="UnityEngine.CoreModule">
 		  <HintPath>$(HOME)/repos/BL-Libs/PC/MelonLoader/Il2CppAssemblies/UnityEngine.CoreModule.dll</HintPath>
