@@ -25,7 +25,7 @@ namespace novirtualcrouch
 		{
 			private static void Postfix(OpenController __instance, ref Vector2 __result)
 			{
-				if (!virtualCrouch.Value && __instance == Player.RightController)
+				if (virtualCrouch.Value == false && __instance == Player.RightController)
 				{
 					__result.y = 0f;
 				}
