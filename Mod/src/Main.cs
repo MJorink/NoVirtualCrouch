@@ -9,7 +9,7 @@ namespace novirtualcrouch
 {
 	public class NoVirtualCrouch : MelonMod
 	{
-		public const string Version = "1.1.0";
+		public const string Version = "2.0.0";
 
 		private static MelonPreferences_Entry<bool> virtualCrouch;
 
@@ -20,14 +20,14 @@ namespace novirtualcrouch
 			virtualCrouch = menu.Bool("Virtual Crouch", false, Color.green);
 		}
 
-		[HarmonyPatch(typeof(OpenController), nameof(OpenController.GetThumbStickAxis))]
+		[HarmonyPatch(typeof(OpenControllerRig), nameof(OpenControllerRig.ProcessSecondaryThumbstick))]
 		private static class SuppressVirtualCrouch
 		{
-			private static void Postfix(OpenController __instance, ref Vector2 __result)
+			private static void Prefix(ref Vector2 axis)
 			{
-				if (virtualCrouch.Value == false && __instance == Player.RightController)
+				if (virtualCrouch.Value == false)
 				{
-					__result.y = 0f;
+					axis.y = 0f;
 				}
 			}
 		}
