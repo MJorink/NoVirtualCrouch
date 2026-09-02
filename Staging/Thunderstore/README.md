@@ -1,5 +1,5 @@
 # NoVirtualCrouch
-A BONELAB mod that disables virtual crouching input.
+A BONELAB mod that allows you to disable virtual crouching input.
 
 ## Discord Server
 Join the Discord server to chat, give suggestions, report issues, and get sneak peeks! <br>

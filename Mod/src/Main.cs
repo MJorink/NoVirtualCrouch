@@ -1,6 +1,5 @@
 using HarmonyLib;
 using MelonLoader;
-using BoneLib;
 using Il2CppSLZ.Marrow;
 using UnityEngine;
 using jlib;
@@ -20,14 +19,14 @@ namespace novirtualcrouch
 			virtualCrouch = menu.Bool("Virtual Crouch", false, Color.green);
 		}
 
-		[HarmonyPatch(typeof(OpenControllerRig), nameof(OpenControllerRig.ProcessSecondaryThumbstick))]
+		[HarmonyPatch(typeof(RemapRig), nameof(RemapRig.CrouchHold))]
 		private static class SuppressVirtualCrouch
 		{
-			private static void Prefix(ref Vector2 axis)
+			private static void Prefix(ref bool crouchInput)
 			{
 				if (virtualCrouch.Value == false)
 				{
-					axis.y = 0f;
+					crouchInput = false;
 				}
 			}
 		}
